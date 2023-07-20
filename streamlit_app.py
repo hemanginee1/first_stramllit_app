@@ -1,4 +1,14 @@
-import streamlit
+import streamlit as st
+
+# Example usage with a unique key generated using the widget's content
+options = ["Option 1", "Option 2", "Option 3"]
+unique_key = hash(tuple(options))  # Generate a unique key based on the options
+selected_options = st.multiselect("Select options:", options, key=unique_key)
+
+# Use 'selected_options' in your application logic
+# ...
+
+ import streamlit
 streamlit.title( 'MY PARANTS NEW HEALTHY DINER')
 streamlit.header( 'BREAKFAST MENU')
 streamlit.text( 'OMEGA 3 & BLUEBERRY OATMEAL')
@@ -34,4 +44,4 @@ options = ["Option 1", "Option 2", "Option 3"]
 selected_options = st.multiselect("Select options:", options, key=unique_key)
 
 
- 
+
