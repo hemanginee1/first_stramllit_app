@@ -28,6 +28,21 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[fruits_selected]   
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
+import streamlit as st
+
+options_list = [
+    ["Option 1", "Option 2", "Option 3"],
+    ["Choice A", "Choice B", "Choice C"],
+    # Add more lists of options as needed
+]
+
+# Loop through each set of options and create a unique multiselect
+for i, options in enumerate(options_list):
+    unique_key = f"multiselect_{i}"
+    selected_options = st.multiselect(f"Select options {i}:", options, key=unique_key)
+
+    # Use 'selected_options' in your application logic
+    # ...
 
 
 
